@@ -7,10 +7,10 @@ namespace MSEM_Dev
     {
         public static void Main()
         {
-            /*            Login login = new Login();
-                        Application.Run(login);*/
-            index index1 = new index();
-            Application.Run(index1);
+            Login login = new Login();
+            Application.Run(login);
+            /*            index index1 = new index();
+                        Application.Run(index1);*/
         }
     }
 }

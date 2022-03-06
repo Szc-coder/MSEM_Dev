@@ -33,16 +33,18 @@
             this.passwordTextBox = new System.Windows.Forms.TextBox();
             this.UserNameLable = new System.Windows.Forms.Label();
             this.PasswordLable = new System.Windows.Forms.Label();
+            this.regButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // LoginButton
             // 
-            this.LoginButton.Location = new System.Drawing.Point(125, 188);
+            this.LoginButton.Location = new System.Drawing.Point(195, 186);
             this.LoginButton.Name = "LoginButton";
             this.LoginButton.Size = new System.Drawing.Size(75, 23);
             this.LoginButton.TabIndex = 0;
             this.LoginButton.Text = "登录";
             this.LoginButton.UseVisualStyleBackColor = true;
+            this.LoginButton.Click += new System.EventHandler(this.LoginButton_Click);
             // 
             // userNameTextBox
             // 
@@ -55,6 +57,7 @@
             // 
             this.passwordTextBox.Location = new System.Drawing.Point(195, 122);
             this.passwordTextBox.Name = "passwordTextBox";
+            this.passwordTextBox.PasswordChar = '*';
             this.passwordTextBox.Size = new System.Drawing.Size(100, 23);
             this.passwordTextBox.TabIndex = 2;
             // 
@@ -76,11 +79,22 @@
             this.PasswordLable.TabIndex = 4;
             this.PasswordLable.Text = "密码";
             // 
+            // regButton
+            // 
+            this.regButton.Location = new System.Drawing.Point(90, 186);
+            this.regButton.Name = "regButton";
+            this.regButton.Size = new System.Drawing.Size(75, 23);
+            this.regButton.TabIndex = 5;
+            this.regButton.Text = "注册";
+            this.regButton.UseVisualStyleBackColor = true;
+            this.regButton.Click += new System.EventHandler(this.regButton_Click);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(374, 239);
+            this.Controls.Add(this.regButton);
             this.Controls.Add(this.PasswordLable);
             this.Controls.Add(this.UserNameLable);
             this.Controls.Add(this.passwordTextBox);
@@ -88,6 +102,7 @@
             this.Controls.Add(this.LoginButton);
             this.Name = "Login";
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.Login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -100,5 +115,6 @@
         private TextBox passwordTextBox;
         private Label UserNameLable;
         private Label PasswordLable;
+        private Button regButton;
     }
 }

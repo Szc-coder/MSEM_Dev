@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MSEM_Dev.page;
+using MSEM_Dev.goble;
 
 namespace MSEM_Dev.page
 {
@@ -16,6 +17,39 @@ namespace MSEM_Dev.page
         public index()
         {
             InitializeComponent();
+        }
+
+
+        private void index_Load(object sender, EventArgs e)
+        {
+
+            this.Text = $"欢迎你，{Goble.Name}!        当前权限：{Goble.Role_name}";
+
+            if (Goble.Role_name == "科室主任")
+            {
+                申报审核ToolStripMenuItem.Visible = false;
+                设备维修申请受理ToolStripMenuItem.Visible = false;
+            }
+
+            if (Goble.Role_name == "科室设备管理员")
+            {
+                用户管理ToolStripMenuItem.Visible = false;
+                申报审核ToolStripMenuItem.Visible = false;
+                设备维修申请受理ToolStripMenuItem.Visible = false;
+                设备借还申请审核ToolStripMenuItem.Visible = false;
+            }
+
+            if (Goble.Role_name == "维修工程师")
+            {
+                用户管理ToolStripMenuItem.Visible = false;
+                设备申报ToolStripMenuItem.Visible = false;
+                设备入库ToolStripMenuItem.Visible = false;
+                设备借还ToolStripMenuItem.Visible = false;
+                设备维修申请ToolStripMenuItem.Visible = false;
+                申报审核ToolStripMenuItem.Visible = false;
+                设备借还申请审核ToolStripMenuItem.Visible = false;
+            }
+
         }
 
 
@@ -107,6 +141,21 @@ namespace MSEM_Dev.page
             this.indexPanel.Controls.Clear();
             this.indexPanel.Controls.Add(eqRepairReview);
             eqRepairReview.Show();
+        }
+
+        private void 设备借还申请审核ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EQbdExamine eq = new EQbdExamine();
+            eq.FormBorderStyle = FormBorderStyle.None;
+            eq.TopLevel = false;
+            this.indexPanel.Controls.Clear();
+            this.indexPanel.Controls.Add(eq);
+            eq.Show();
+        }
+
+        private void index_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            System.Diagnostics.Process.GetCurrentProcess().Kill();
         }
     }
 }
