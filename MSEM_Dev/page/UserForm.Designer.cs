@@ -47,6 +47,8 @@
             this.selectBT = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.DpBox = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.UserDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,6 +73,7 @@
             this.UserDataGridView.Name = "UserDataGridView";
             this.UserDataGridView.RowHeadersVisible = false;
             this.UserDataGridView.RowTemplate.Height = 25;
+            this.UserDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.UserDataGridView.Size = new System.Drawing.Size(906, 527);
             this.UserDataGridView.TabIndex = 0;
             // 
@@ -116,7 +119,7 @@
             // 
             // AddUser
             // 
-            this.AddUser.Location = new System.Drawing.Point(981, 77);
+            this.AddUser.Location = new System.Drawing.Point(981, 35);
             this.AddUser.Name = "AddUser";
             this.AddUser.Size = new System.Drawing.Size(75, 23);
             this.AddUser.TabIndex = 1;
@@ -126,7 +129,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(981, 185);
+            this.button2.Location = new System.Drawing.Point(981, 143);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 2;
@@ -136,23 +139,24 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(981, 237);
+            this.button3.Location = new System.Drawing.Point(981, 195);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 3;
             this.button3.Text = "修改用户";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // userPhoneTb
             // 
-            this.userPhoneTb.Location = new System.Drawing.Point(1010, 330);
+            this.userPhoneTb.Location = new System.Drawing.Point(1010, 295);
             this.userPhoneTb.Name = "userPhoneTb";
             this.userPhoneTb.Size = new System.Drawing.Size(100, 23);
             this.userPhoneTb.TabIndex = 4;
             // 
             // userNameTb
             // 
-            this.userNameTb.Location = new System.Drawing.Point(1010, 396);
+            this.userNameTb.Location = new System.Drawing.Point(1010, 347);
             this.userNameTb.Name = "userNameTb";
             this.userNameTb.Size = new System.Drawing.Size(100, 23);
             this.userNameTb.TabIndex = 6;
@@ -160,7 +164,7 @@
             // userPhoneLb
             // 
             this.userPhoneLb.AutoSize = true;
-            this.userPhoneLb.Location = new System.Drawing.Point(929, 333);
+            this.userPhoneLb.Location = new System.Drawing.Point(929, 298);
             this.userPhoneLb.Name = "userPhoneLb";
             this.userPhoneLb.Size = new System.Drawing.Size(44, 17);
             this.userPhoneLb.TabIndex = 7;
@@ -169,7 +173,7 @@
             // NamelB
             // 
             this.NamelB.AutoSize = true;
-            this.NamelB.Location = new System.Drawing.Point(929, 402);
+            this.NamelB.Location = new System.Drawing.Point(929, 353);
             this.NamelB.Name = "NamelB";
             this.NamelB.Size = new System.Drawing.Size(32, 17);
             this.NamelB.TabIndex = 8;
@@ -177,25 +181,26 @@
             // 
             // selectBT
             // 
-            this.selectBT.Location = new System.Drawing.Point(981, 450);
+            this.selectBT.Location = new System.Drawing.Point(981, 453);
             this.selectBT.Name = "selectBT";
             this.selectBT.Size = new System.Drawing.Size(75, 23);
             this.selectBT.TabIndex = 9;
             this.selectBT.Text = "查询";
             this.selectBT.UseVisualStyleBackColor = true;
+            this.selectBT.Click += new System.EventHandler(this.selectBT_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(929, 289);
+            this.label1.Location = new System.Drawing.Point(929, 254);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(164, 17);
+            this.label1.Size = new System.Drawing.Size(56, 17);
             this.label1.TabIndex = 10;
-            this.label1.Text = "通过手机号或者姓名查询用户";
+            this.label1.Text = "查询用户";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(981, 128);
+            this.button1.Location = new System.Drawing.Point(981, 86);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 11;
@@ -203,11 +208,30 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(929, 401);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(32, 17);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "部门";
+            // 
+            // DpBox
+            // 
+            this.DpBox.FormattingEnabled = true;
+            this.DpBox.Location = new System.Drawing.Point(1010, 401);
+            this.DpBox.Name = "DpBox";
+            this.DpBox.Size = new System.Drawing.Size(121, 25);
+            this.DpBox.TabIndex = 13;
+            // 
             // UserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1147, 527);
+            this.Controls.Add(this.DpBox);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.selectBT);
@@ -249,5 +273,7 @@
         private Button selectBT;
         private Label label1;
         private Button button1;
+        private Label label2;
+        private ComboBox DpBox;
     }
 }

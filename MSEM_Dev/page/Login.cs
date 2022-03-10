@@ -29,15 +29,16 @@ namespace MSEM_Dev.page
                 bool havCount = dataReader.Read();
                 if(havCount)
                 {
-                    string sql = $"select name, role_name ,department from MEMS.[user] join MEMS.[role_class] rc on rc.id = [user].role where phone = '{userNameTextBox.Text}'";
+                    string sql = $"select name, role_name ,department,phone from MEMS.[user] join MEMS.[role_class] rc on rc.id = [user].role where phone = '{userNameTextBox.Text}'";
                     SqlDataReader role = dataBase.getsdr(sql);
                     role.Read();
 
                     Goble.Dp = (string)role["department"];
                     Goble.Name = (string)role["name"];
                     Goble.Role_name = (string)role["role_name"];
+                    Goble.phone = (string)role["phone"];
 
-                    index index = new index();
+                    index index = new index(this);
                     index.Show();
 
                     this.Visible = false;

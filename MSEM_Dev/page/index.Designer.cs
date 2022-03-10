@@ -41,6 +41,9 @@ namespace MSEM_Dev.page
             this.设备维修申请受理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.设备借还申请审核ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.消息发布ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.个人中心ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.修改密码ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.退出登录ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.indexPanel = new System.Windows.Forms.Panel();
             this.IndexMenuStrip.SuspendLayout();
             this.SuspendLayout();
@@ -57,7 +60,8 @@ namespace MSEM_Dev.page
             this.申报审核ToolStripMenuItem,
             this.设备维修申请受理ToolStripMenuItem,
             this.设备借还申请审核ToolStripMenuItem,
-            this.消息发布ToolStripMenuItem});
+            this.消息发布ToolStripMenuItem,
+            this.个人中心ToolStripMenuItem});
             this.IndexMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.IndexMenuStrip.Name = "IndexMenuStrip";
             this.IndexMenuStrip.Size = new System.Drawing.Size(1187, 25);
@@ -134,6 +138,29 @@ namespace MSEM_Dev.page
             this.消息发布ToolStripMenuItem.Text = "消息发布";
             this.消息发布ToolStripMenuItem.Click += new System.EventHandler(this.消息发布ToolStripMenuItem_Click);
             // 
+            // 个人中心ToolStripMenuItem
+            // 
+            this.个人中心ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.修改密码ToolStripMenuItem,
+            this.退出登录ToolStripMenuItem});
+            this.个人中心ToolStripMenuItem.Name = "个人中心ToolStripMenuItem";
+            this.个人中心ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
+            this.个人中心ToolStripMenuItem.Text = "个人中心";
+            // 
+            // 修改密码ToolStripMenuItem
+            // 
+            this.修改密码ToolStripMenuItem.Name = "修改密码ToolStripMenuItem";
+            this.修改密码ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.修改密码ToolStripMenuItem.Text = "修改密码";
+            this.修改密码ToolStripMenuItem.Click += new System.EventHandler(this.修改密码ToolStripMenuItem_Click);
+            // 
+            // 退出登录ToolStripMenuItem
+            // 
+            this.退出登录ToolStripMenuItem.Name = "退出登录ToolStripMenuItem";
+            this.退出登录ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.退出登录ToolStripMenuItem.Text = "退出登录";
+            this.退出登录ToolStripMenuItem.Click += new System.EventHandler(this.退出登录ToolStripMenuItem_Click);
+            // 
             // indexPanel
             // 
             this.indexPanel.Location = new System.Drawing.Point(12, 28);
@@ -173,5 +200,8 @@ namespace MSEM_Dev.page
         private Panel indexPanel;
         private ToolStripMenuItem 设备维修申请受理ToolStripMenuItem;
         private ToolStripMenuItem 设备借还申请审核ToolStripMenuItem;
+        private ToolStripMenuItem 个人中心ToolStripMenuItem;
+        private ToolStripMenuItem 修改密码ToolStripMenuItem;
+        private ToolStripMenuItem 退出登录ToolStripMenuItem;
     }
 }

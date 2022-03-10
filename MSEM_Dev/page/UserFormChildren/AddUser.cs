@@ -9,15 +9,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MSEM_Dev.goble;
 
 namespace MSEM_Dev.page.UserFormChildren
 {
     public partial class AddUser : Form
     {
-
-        DataSet RoleDS;
-        DataSet DpDS;
-
         public AddUser()
         {
             InitializeComponent();
@@ -27,19 +24,19 @@ namespace MSEM_Dev.page.UserFormChildren
         {
             DataBase dataBase = new DataBase();
 
+
+            if (!Valied.isTrueLen(Phone.Text, 10, 12) || Pwd.Text != Pwd2.Text || !Valied.isTrueLen(Pwd.Text, 7, 21) || !Valied.isTrueLen(name.Text, 0, 10) || !Valied.isTrueNum(Convert.ToInt32(age.Text), 17, 120))
+            {
+                MessageBox.Show("个人信息错误！请重新输入");
+                return;
+            }
+
             string valied = $"select * from MEMS.[user] where phone = '{Phone.Text}'";
             SqlDataReader dataReder = dataBase.getsdr(valied);
             dataReder.Read();
             if (dataReder.HasRows)
             {
                 MessageBox.Show("该手机号已存在，请重新输入");
-                return;
-            }
-
-
-            if (!Valied.isTrueLen(Phone.Text,10,12) || Pwd.Text != Pwd2.Text || !Valied.isTrueLen(Pwd.Text, 7, 21) || !Valied.isTrueLen(name.Text, 0, 10) || !Valied.isTrueNum(Convert.ToInt32(age.Text), 17, 120))
-            {
-                MessageBox.Show("个人信息错误！请重新输入");
                 return;
             }
 
@@ -56,17 +53,27 @@ namespace MSEM_Dev.page.UserFormChildren
                 }
                 else
                 {
-                    DataTable roles = RoleDS.Tables[0];
-                    var ro = from dp in roles.AsEnumerable() where dp.Field<string>("role_name") == RoleCom.Text select dp[0];
-                    string role = "";
-                    ro.ToList().ForEach(dp => { role = dp.ToString(); });
+                    int roleid = 3;
+                    foreach(int i in RoleAndDp.roles.Keys)
+                    {
+                        if(RoleAndDp.roles[i].Equals(RoleCom.Text))
+                        {
+                            roleid = i;
+                            break;
+                        }
+                    }
 
-                    DataTable dt = DpDS.Tables[0];
-                    var DPID = from dp in dt.AsEnumerable() where dp.Field<string>("name") == DPcom.Text select dp[0];
-                    string ansDpId = "";
-                    DPID.ToList().ForEach(dp => { ansDpId = dp.ToString(); });
+                    string Dpid = "";
+                    foreach(string key in RoleAndDp.dps.Keys)
+                    {
+                        if(RoleAndDp.dps[key].Equals(DPcom.Text))
+                        {
+                            Dpid = key;
+                            break;
+                        }
+                    }
 
-                    string sql = string.Format($"insert into MEMS.[user] values('{guid}','{Pwd.Text}','{name.Text}','{Phone.Text}','{sex.Text}','{age.Text}','{Convert.ToInt32(role)}','{ansDpId}')");
+                    string sql = string.Format($"insert into MEMS.[user] values('{guid}','{Pwd.Text}','{name.Text}','{Phone.Text}','{sex.Text}','{age.Text}',{roleid},'{Dpid}')");
                     dataBase.dosqlcom(sql);
                     MessageBox.Show("添加成功");
                     this.Close();
@@ -92,21 +99,15 @@ namespace MSEM_Dev.page.UserFormChildren
             else
             {
 
-                DataBase dataBase = new DataBase();
-                string sql = "select * from MEMS.[department]";
-                DpDS = dataBase.getDs(sql, "department");
-                foreach (DataRow Dr in DpDS.Tables[0].Rows)
+                
+                foreach (int key in RoleAndDp.roles.Keys)
                 {
-                    DPcom.Items.Add(Dr[1]);
+                    RoleCom.Items.Add(RoleAndDp.roles[key]);
                 }
 
-
-
-                string sql2 = "select * from MEMS.[role_class]";
-                RoleDS = dataBase.getDs(sql2, "role_class");
-                foreach (DataRow Dr in RoleDS.Tables[0].Rows)
+                foreach (string key in RoleAndDp.dps.Keys)
                 {
-                    RoleCom.Items.Add(Dr[1]);
+                    DPcom.Items.Add(RoleAndDp.dps[key]);
                 }
             }
         }

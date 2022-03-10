@@ -9,8 +9,6 @@ namespace MSEM_Dev
         {
             Login login = new Login();
             Application.Run(login);
-            /*            index index1 = new index();
-                        Application.Run(index1);*/
         }
     }
 }

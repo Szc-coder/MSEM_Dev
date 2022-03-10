@@ -9,14 +9,18 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MSEM_Dev.page;
 using MSEM_Dev.goble;
+using MSEM_Dev.page.Personal_Center;
 
 namespace MSEM_Dev.page
 {
     public partial class index : Form
     {
-        public index()
+        Login login { get; set; }
+
+        public index(Login login)
         {
             InitializeComponent();
+            this.login = login;
         }
 
 
@@ -156,6 +160,17 @@ namespace MSEM_Dev.page
         private void index_FormClosing(object sender, FormClosingEventArgs e)
         {
             System.Diagnostics.Process.GetCurrentProcess().Kill();
+        }
+
+        private void 修改密码ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            modiflyPwd modiflyPwd = new modiflyPwd();
+            modiflyPwd.Show();
+        }
+
+        private void 退出登录ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

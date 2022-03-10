@@ -12,5 +12,6 @@ namespace MSEM_Dev.goble
         public static string Name { get; set; }
         public static string Role_name { get; set; }
         public static string Dp { get; set; }
+        public static string phone { get; set; }
     }
 }
