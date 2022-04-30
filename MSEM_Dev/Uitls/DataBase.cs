@@ -58,6 +58,20 @@ namespace MSEM_Dev.Uitls
             return dataSet;
         }
 
+        public DataTable getTable(string sqlstr,String[] rowName)
+        {
+            getcon();
+            SqlDataAdapter dt = new SqlDataAdapter(sqlstr,My_Conn);
+            DataTable dataTable = new DataTable();
+            foreach(String name in rowName)
+            {
+                dataTable.Columns.Add(name);
+            }
+            
+            dt.Fill(dataTable);
+            conn_close();
+            return dataTable;
+        }
 
     }
 }

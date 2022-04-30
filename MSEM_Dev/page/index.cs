@@ -54,6 +54,21 @@ namespace MSEM_Dev.page
                 设备借还申请审核ToolStripMenuItem.Visible = false;
             }
 
+            /*
+                状态
+                0:报废
+                1:正常
+                2:申请维修中
+                3:申请保养中
+             
+             */
+
+            goble.eqState.eqStates.Add(0, "报废");
+            goble.eqState.eqStates.Add(1, "正常");
+            goble.eqState.eqStates.Add(2, "申请维修中");
+            goble.eqState.eqStates.Add(3, "申请保养中");
+
+
         }
 
 

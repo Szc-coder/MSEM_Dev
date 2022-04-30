@@ -2,6 +2,7 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using Microsoft.Office.Interop.Excel;
 using MSEM_Dev.goble;
 using MSEM_Dev.Uitls;
 using MSEM_Dev.page.EqFormChildred;
@@ -60,6 +61,33 @@ namespace MSEM_Dev.page
         {
             AddEq addEq = new AddEq();
             addEq.Show();
+        }
+
+        private void deleteEq_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                String id = EqDataGridView.SelectedCells[0].Value.ToString();
+                String Sql = $"DELETE FROM MEMS.[equipment] WHERE id = '{id}'";
+                DialogResult dialogResult = MessageBox.Show("请注意，该操作不可逆", "警告", MessageBoxButtons.OKCancel,
+                    MessageBoxIcon.Warning);
+                if (dialogResult == DialogResult.OK)
+                {  
+                    DataBase dataBase = new DataBase();
+                    dataBase.dosqlcom(Sql);
+                    MessageBox.Show("删除成功!");
+                    Refresh();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("系统异常");
+            }
+        }
+
+        private void updataEq_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

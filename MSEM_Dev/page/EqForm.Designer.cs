@@ -187,6 +187,7 @@
             this.deleteEq.TabIndex = 4;
             this.deleteEq.Text = "删除设备";
             this.deleteEq.UseVisualStyleBackColor = true;
+            this.deleteEq.Click += new System.EventHandler(this.deleteEq_Click);
             // 
             // updataEq
             // 
@@ -196,6 +197,7 @@
             this.updataEq.TabIndex = 5;
             this.updataEq.Text = "修改设备";
             this.updataEq.UseVisualStyleBackColor = true;
+            this.updataEq.Click += new System.EventHandler(this.updataEq_Click);
             // 
             // EqForm
             // 
