@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.EqDataGridView = new System.Windows.Forms.DataGridView();
+            this.AddEq = new System.Windows.Forms.Button();
+            this.Reflash = new System.Windows.Forms.Button();
+            this.deleteEq = new System.Windows.Forms.Button();
+            this.updataEq = new System.Windows.Forms.Button();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.serial_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -37,13 +41,8 @@
             this.location = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.responsible_dp = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.state = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.users = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.supplier_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AddEq = new System.Windows.Forms.Button();
-            this.Reflash = new System.Windows.Forms.Button();
-            this.deleteEq = new System.Windows.Forms.Button();
-            this.updataEq = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.EqDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,7 +61,6 @@
             this.location,
             this.responsible_dp,
             this.state,
-            this.users,
             this.price,
             this.supplier_id});
             this.EqDataGridView.Dock = System.Windows.Forms.DockStyle.Left;
@@ -74,6 +72,46 @@
             this.EqDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.EqDataGridView.Size = new System.Drawing.Size(906, 527);
             this.EqDataGridView.TabIndex = 1;
+            // 
+            // AddEq
+            // 
+            this.AddEq.Location = new System.Drawing.Point(973, 41);
+            this.AddEq.Name = "AddEq";
+            this.AddEq.Size = new System.Drawing.Size(75, 23);
+            this.AddEq.TabIndex = 2;
+            this.AddEq.Text = "添加设备";
+            this.AddEq.UseVisualStyleBackColor = true;
+            this.AddEq.Click += new System.EventHandler(this.AddEq_Click);
+            // 
+            // Reflash
+            // 
+            this.Reflash.Location = new System.Drawing.Point(973, 85);
+            this.Reflash.Name = "Reflash";
+            this.Reflash.Size = new System.Drawing.Size(75, 23);
+            this.Reflash.TabIndex = 3;
+            this.Reflash.Text = "刷新";
+            this.Reflash.UseVisualStyleBackColor = true;
+            this.Reflash.Click += new System.EventHandler(this.Reflash_Click);
+            // 
+            // deleteEq
+            // 
+            this.deleteEq.Location = new System.Drawing.Point(973, 134);
+            this.deleteEq.Name = "deleteEq";
+            this.deleteEq.Size = new System.Drawing.Size(75, 23);
+            this.deleteEq.TabIndex = 4;
+            this.deleteEq.Text = "删除设备";
+            this.deleteEq.UseVisualStyleBackColor = true;
+            this.deleteEq.Click += new System.EventHandler(this.deleteEq_Click);
+            // 
+            // updataEq
+            // 
+            this.updataEq.Location = new System.Drawing.Point(973, 182);
+            this.updataEq.Name = "updataEq";
+            this.updataEq.Size = new System.Drawing.Size(75, 23);
+            this.updataEq.TabIndex = 5;
+            this.updataEq.Text = "修改设备";
+            this.updataEq.UseVisualStyleBackColor = true;
+            this.updataEq.Click += new System.EventHandler(this.updataEq_Click);
             // 
             // id
             // 
@@ -141,12 +179,6 @@
             this.state.HeaderText = "状态";
             this.state.Name = "state";
             // 
-            // users
-            // 
-            this.users.DataPropertyName = "users";
-            this.users.HeaderText = "负责人";
-            this.users.Name = "users";
-            // 
             // price
             // 
             this.price.DataPropertyName = "price";
@@ -158,46 +190,6 @@
             this.supplier_id.DataPropertyName = "supplier_id";
             this.supplier_id.HeaderText = "供应商id";
             this.supplier_id.Name = "supplier_id";
-            // 
-            // AddEq
-            // 
-            this.AddEq.Location = new System.Drawing.Point(973, 41);
-            this.AddEq.Name = "AddEq";
-            this.AddEq.Size = new System.Drawing.Size(75, 23);
-            this.AddEq.TabIndex = 2;
-            this.AddEq.Text = "添加设备";
-            this.AddEq.UseVisualStyleBackColor = true;
-            this.AddEq.Click += new System.EventHandler(this.AddEq_Click);
-            // 
-            // Reflash
-            // 
-            this.Reflash.Location = new System.Drawing.Point(973, 85);
-            this.Reflash.Name = "Reflash";
-            this.Reflash.Size = new System.Drawing.Size(75, 23);
-            this.Reflash.TabIndex = 3;
-            this.Reflash.Text = "刷新";
-            this.Reflash.UseVisualStyleBackColor = true;
-            this.Reflash.Click += new System.EventHandler(this.Reflash_Click);
-            // 
-            // deleteEq
-            // 
-            this.deleteEq.Location = new System.Drawing.Point(973, 134);
-            this.deleteEq.Name = "deleteEq";
-            this.deleteEq.Size = new System.Drawing.Size(75, 23);
-            this.deleteEq.TabIndex = 4;
-            this.deleteEq.Text = "删除设备";
-            this.deleteEq.UseVisualStyleBackColor = true;
-            this.deleteEq.Click += new System.EventHandler(this.deleteEq_Click);
-            // 
-            // updataEq
-            // 
-            this.updataEq.Location = new System.Drawing.Point(973, 182);
-            this.updataEq.Name = "updataEq";
-            this.updataEq.Size = new System.Drawing.Size(75, 23);
-            this.updataEq.TabIndex = 5;
-            this.updataEq.Text = "修改设备";
-            this.updataEq.UseVisualStyleBackColor = true;
-            this.updataEq.Click += new System.EventHandler(this.updataEq_Click);
             // 
             // EqForm
             // 

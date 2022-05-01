@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MSEM_Dev.goble;
+using MSEM_Dev;
 
 namespace MSEM_Dev.page.EqFormChildred
 {
@@ -72,11 +73,31 @@ namespace MSEM_Dev.page.EqFormChildred
                 String Supplier = supplier.SelectedValue.ToString();
                 String Class_name = class_name.SelectedValue.ToString();
 
-                String sql =
-                    $"insert into MEMS. [equipment] values('{MyGuid.GetGUID()}','{Eq_name}','{SerialNamber}','{PurchaseTime}','{WarehousingTime}','{Location}'" +
-                    $",'{ResponsibleDp}',1,'{DpPrice}','{Supplier}','{Class_name}')";
-                
-                dataBase.dosqlcom(sql);
+                // TODO 添加重复与格式验证
+
+                DataRow dr = EqForm.dataset.Tables[0].NewRow();
+                dr[0] = MyGuid.GetGUID();
+                dr[1] = Eq_name;
+                dr[2] = SerialNamber;
+                dr[3] = PurchaseTime;
+                dr[4] = WarehousingTime;
+                dr[5] = Location;
+                dr[6] = ResponsibleDp;
+                dr[7] = "正常";
+                dr[8] = DpPrice;
+                dr[9] = Supplier;
+                dr[10] = Class_name;
+
+                EqForm.dataset.Tables[0].Rows.Add(dr);
+                EqForm.sdawitnScb.Update(EqForm.dataset);
+
+
+                // String sql =
+                //     $"insert into MEMS. [equipment] values('{MyGuid.GetGUID()}','{Eq_name}','{SerialNamber}','{PurchaseTime}','{WarehousingTime}','{Location}'" +
+                //     $",'{ResponsibleDp}',1,'{DpPrice}','{Supplier}','{Class_name}')";
+                //
+                // dataBase.dosqlcom(sql);
+
 
                 LOG log = new LOG();
                 log.addLog(goble.Goble.Name,"添加设备","设备");
@@ -86,7 +107,7 @@ namespace MSEM_Dev.page.EqFormChildred
             }
             catch (Exception ex)
             {
-                MessageBox.Show(e.ToString());
+                MessageBox.Show("系统异常!请联系管理员~");
             }
         }
     }

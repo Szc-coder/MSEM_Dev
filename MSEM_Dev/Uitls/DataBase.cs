@@ -73,5 +73,13 @@ namespace MSEM_Dev.Uitls
             return dataTable;
         }
 
+
+        public SqlDataAdapter getSdaWithSqlCommandBuilder(String sql)
+        {
+            SqlDataAdapter sda = new SqlDataAdapter(sql,My_Conn);
+            SqlCommandBuilder sqlBuilder = new SqlCommandBuilder(sda);
+            return sda;
+        }
+
     }
 }

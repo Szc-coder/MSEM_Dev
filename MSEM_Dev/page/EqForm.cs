@@ -1,30 +1,35 @@
 ﻿using System;
 using System.Data;
+using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
 using System.Data.SqlClient;
 using System.Linq;
 using Microsoft.Office.Interop.Excel;
 using MSEM_Dev.goble;
 using MSEM_Dev.Uitls;
 using MSEM_Dev.page.EqFormChildred;
-
+using System.Threading;
 
 
 namespace MSEM_Dev.page
 {
     public partial class EqForm : Form
     {
-        DataBase data = new DataBase();
+        // 采用全局变量方式定义dataset和SqlDataAdapter
 
+        DataBase data = new DataBase();
+        public static DataSet dataset = new DataSet();
+        public static SqlDataAdapter sdawitnScb = null;
 
         public EqForm()
         {
             InitializeComponent();
         }
 
-        public void Refresh()
+        public void DataGridReflash()
         {
             string sql = "";
-            EqDataGridView.Rows.Clear();
+            EqDataGridView.DataSource = null;
+            dataset = new DataSet();
             if (Goble.Role_name == "admin")
             {
                 sql = $"select * from MEMS.[equipment]";
@@ -33,28 +38,29 @@ namespace MSEM_Dev.page
             {
                 sql = $"select * from MEMS.[equipment] where responsible_dp = '{Goble.Dp}'";
             }
-            SqlDataReader datareader = data.getsdr(sql);
 
-
-
-            while (datareader.Read())
+            try
             {
-                EqDataGridView.Rows.Add(datareader[0].ToString(), datareader[1].ToString(), datareader[2].ToString(), datareader[3].ToString(),
-                                        datareader[4].ToString(), datareader[5].ToString(), datareader[6].ToString(), datareader[7].ToString(),
-                                        datareader[8].ToString(), datareader[9].ToString(), datareader[10].ToString());
+                sdawitnScb = data.getSdaWithSqlCommandBuilder(sql);
+                sdawitnScb.Fill(dataset);
+                EqDataGridView.DataSource = dataset.Tables[0];
             }
-            datareader.Close();
+            catch (Exception ex)
+            {
+                MessageBox.Show("加载错误，请点击刷新!");
+            }
 
+            
         }
 
         private void EqForm_Load(object sender, EventArgs e)
         {
-            Refresh();
+            DataGridReflash();
         }
 
         private void Reflash_Click(object sender, EventArgs e)
         {
-            Refresh();
+            DataGridReflash();
         }
 
         private void AddEq_Click(object sender, EventArgs e)
@@ -67,16 +73,21 @@ namespace MSEM_Dev.page
         {
             try
             {
-                String id = EqDataGridView.SelectedCells[0].Value.ToString();
-                String Sql = $"DELETE FROM MEMS.[equipment] WHERE id = '{id}'";
+                int row = EqDataGridView.SelectedCells[0].RowIndex;
+                String id = EqDataGridView.Rows[row].Cells[0].Value.ToString();
+                // String Sql = $"DELETE FROM MEMS.[equipment] WHERE id = '{id}'";
                 DialogResult dialogResult = MessageBox.Show("请注意，该操作不可逆", "警告", MessageBoxButtons.OKCancel,
                     MessageBoxIcon.Warning);
                 if (dialogResult == DialogResult.OK)
                 {  
-                    DataBase dataBase = new DataBase();
-                    dataBase.dosqlcom(Sql);
-                    MessageBox.Show("删除成功!");
-                    Refresh();
+                    // DataBase dataBase = new DataBase();
+                    // dataBase.dosqlcom(Sql);
+                    // MessageBox.Show("删除成功!");
+                    // Refresh();
+                    dataset.Tables[0].Rows[EqDataGridView.SelectedCells[0].RowIndex].Delete();
+                    sdawitnScb.Update(dataset);
+                    LOG log = new LOG();
+                    log.addLog(goble.Goble.Name,"删除", "设备id："+id);
                 }
             }
             catch (Exception ex)
@@ -87,7 +98,11 @@ namespace MSEM_Dev.page
 
         private void updataEq_Click(object sender, EventArgs e)
         {
-
+            updataEq eq = new updataEq();
+            int row = EqDataGridView.SelectedCells[0].RowIndex;
+            String id = EqDataGridView.Rows[row].Cells[0].Value.ToString();
+            eq.id = id;
+            eq.Show();
         }
     }
 }
