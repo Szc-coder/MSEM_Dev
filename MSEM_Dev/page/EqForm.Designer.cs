@@ -29,10 +29,6 @@
         private void InitializeComponent()
         {
             this.EqDataGridView = new System.Windows.Forms.DataGridView();
-            this.AddEq = new System.Windows.Forms.Button();
-            this.Reflash = new System.Windows.Forms.Button();
-            this.deleteEq = new System.Windows.Forms.Button();
-            this.updataEq = new System.Windows.Forms.Button();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.serial_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,6 +39,26 @@
             this.state = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.supplier_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AddEq = new System.Windows.Forms.Button();
+            this.Reflash = new System.Windows.Forms.Button();
+            this.deleteEq = new System.Windows.Forms.Button();
+            this.updataEq = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.selectByIdBox = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.selectBySer = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.selectByName = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.selectByBuyTime = new System.Windows.Forms.DateTimePicker();
+            this.selectByBuyTime2 = new System.Windows.Forms.DateTimePicker();
+            this.selectDpBox = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.selectButton = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.EqDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,51 +83,12 @@
             this.EqDataGridView.Location = new System.Drawing.Point(0, 0);
             this.EqDataGridView.MultiSelect = false;
             this.EqDataGridView.Name = "EqDataGridView";
+            this.EqDataGridView.ReadOnly = true;
             this.EqDataGridView.RowHeadersVisible = false;
             this.EqDataGridView.RowTemplate.Height = 25;
             this.EqDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.EqDataGridView.Size = new System.Drawing.Size(906, 527);
+            this.EqDataGridView.Size = new System.Drawing.Size(922, 527);
             this.EqDataGridView.TabIndex = 1;
-            // 
-            // AddEq
-            // 
-            this.AddEq.Location = new System.Drawing.Point(973, 41);
-            this.AddEq.Name = "AddEq";
-            this.AddEq.Size = new System.Drawing.Size(75, 23);
-            this.AddEq.TabIndex = 2;
-            this.AddEq.Text = "添加设备";
-            this.AddEq.UseVisualStyleBackColor = true;
-            this.AddEq.Click += new System.EventHandler(this.AddEq_Click);
-            // 
-            // Reflash
-            // 
-            this.Reflash.Location = new System.Drawing.Point(973, 85);
-            this.Reflash.Name = "Reflash";
-            this.Reflash.Size = new System.Drawing.Size(75, 23);
-            this.Reflash.TabIndex = 3;
-            this.Reflash.Text = "刷新";
-            this.Reflash.UseVisualStyleBackColor = true;
-            this.Reflash.Click += new System.EventHandler(this.Reflash_Click);
-            // 
-            // deleteEq
-            // 
-            this.deleteEq.Location = new System.Drawing.Point(973, 134);
-            this.deleteEq.Name = "deleteEq";
-            this.deleteEq.Size = new System.Drawing.Size(75, 23);
-            this.deleteEq.TabIndex = 4;
-            this.deleteEq.Text = "删除设备";
-            this.deleteEq.UseVisualStyleBackColor = true;
-            this.deleteEq.Click += new System.EventHandler(this.deleteEq_Click);
-            // 
-            // updataEq
-            // 
-            this.updataEq.Location = new System.Drawing.Point(973, 182);
-            this.updataEq.Name = "updataEq";
-            this.updataEq.Size = new System.Drawing.Size(75, 23);
-            this.updataEq.TabIndex = 5;
-            this.updataEq.Text = "修改设备";
-            this.updataEq.UseVisualStyleBackColor = true;
-            this.updataEq.Click += new System.EventHandler(this.updataEq_Click);
             // 
             // id
             // 
@@ -120,6 +97,7 @@
             this.id.Frozen = true;
             this.id.HeaderText = "id";
             this.id.Name = "id";
+            this.id.ReadOnly = true;
             this.id.Width = 82;
             // 
             // name
@@ -129,6 +107,7 @@
             this.name.Frozen = true;
             this.name.HeaderText = "设备名";
             this.name.Name = "name";
+            this.name.ReadOnly = true;
             this.name.Width = 82;
             // 
             // serial_number
@@ -138,6 +117,7 @@
             this.serial_number.Frozen = true;
             this.serial_number.HeaderText = "序列号";
             this.serial_number.Name = "serial_number";
+            this.serial_number.ReadOnly = true;
             this.serial_number.Width = 82;
             // 
             // purchase_time
@@ -147,6 +127,7 @@
             this.purchase_time.Frozen = true;
             this.purchase_time.HeaderText = "购买时间";
             this.purchase_time.Name = "purchase_time";
+            this.purchase_time.ReadOnly = true;
             this.purchase_time.Width = 82;
             // 
             // warehousing_time
@@ -156,6 +137,7 @@
             this.warehousing_time.Frozen = true;
             this.warehousing_time.HeaderText = "入库时间";
             this.warehousing_time.Name = "warehousing_time";
+            this.warehousing_time.ReadOnly = true;
             this.warehousing_time.Width = 82;
             // 
             // location
@@ -165,6 +147,7 @@
             this.location.Frozen = true;
             this.location.HeaderText = "位置";
             this.location.Name = "location";
+            this.location.ReadOnly = true;
             this.location.Width = 83;
             // 
             // responsible_dp
@@ -172,30 +155,227 @@
             this.responsible_dp.DataPropertyName = "responsible_dp";
             this.responsible_dp.HeaderText = "负责部门";
             this.responsible_dp.Name = "responsible_dp";
+            this.responsible_dp.ReadOnly = true;
             // 
             // state
             // 
             this.state.DataPropertyName = "state";
             this.state.HeaderText = "状态";
             this.state.Name = "state";
+            this.state.ReadOnly = true;
             // 
             // price
             // 
             this.price.DataPropertyName = "price";
             this.price.HeaderText = "价格";
             this.price.Name = "price";
+            this.price.ReadOnly = true;
             // 
             // supplier_id
             // 
             this.supplier_id.DataPropertyName = "supplier_id";
             this.supplier_id.HeaderText = "供应商id";
             this.supplier_id.Name = "supplier_id";
+            this.supplier_id.ReadOnly = true;
+            // 
+            // AddEq
+            // 
+            this.AddEq.Location = new System.Drawing.Point(944, 22);
+            this.AddEq.Name = "AddEq";
+            this.AddEq.Size = new System.Drawing.Size(75, 23);
+            this.AddEq.TabIndex = 2;
+            this.AddEq.Text = "添加设备";
+            this.AddEq.UseVisualStyleBackColor = true;
+            this.AddEq.Click += new System.EventHandler(this.AddEq_Click);
+            // 
+            // Reflash
+            // 
+            this.Reflash.Location = new System.Drawing.Point(1055, 22);
+            this.Reflash.Name = "Reflash";
+            this.Reflash.Size = new System.Drawing.Size(75, 23);
+            this.Reflash.TabIndex = 3;
+            this.Reflash.Text = "刷新";
+            this.Reflash.UseVisualStyleBackColor = true;
+            this.Reflash.Click += new System.EventHandler(this.Reflash_Click);
+            // 
+            // deleteEq
+            // 
+            this.deleteEq.Location = new System.Drawing.Point(944, 68);
+            this.deleteEq.Name = "deleteEq";
+            this.deleteEq.Size = new System.Drawing.Size(75, 23);
+            this.deleteEq.TabIndex = 4;
+            this.deleteEq.Text = "删除设备";
+            this.deleteEq.UseVisualStyleBackColor = true;
+            this.deleteEq.Click += new System.EventHandler(this.deleteEq_Click);
+            // 
+            // updataEq
+            // 
+            this.updataEq.Location = new System.Drawing.Point(1055, 68);
+            this.updataEq.Name = "updataEq";
+            this.updataEq.Size = new System.Drawing.Size(75, 23);
+            this.updataEq.TabIndex = 5;
+            this.updataEq.Text = "修改设备";
+            this.updataEq.UseVisualStyleBackColor = true;
+            this.updataEq.Click += new System.EventHandler(this.updataEq_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(945, 140);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(59, 17);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "查询设备:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(946, 175);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(45, 17);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "ID查询";
+            // 
+            // selectByIdBox
+            // 
+            this.selectByIdBox.Location = new System.Drawing.Point(1014, 171);
+            this.selectByIdBox.Name = "selectByIdBox";
+            this.selectByIdBox.Size = new System.Drawing.Size(100, 23);
+            this.selectByIdBox.TabIndex = 13;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(946, 210);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(44, 17);
+            this.label3.TabIndex = 14;
+            this.label3.Text = "序列号";
+            // 
+            // selectBySer
+            // 
+            this.selectBySer.Location = new System.Drawing.Point(1014, 205);
+            this.selectBySer.Name = "selectBySer";
+            this.selectBySer.Size = new System.Drawing.Size(100, 23);
+            this.selectBySer.TabIndex = 15;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(947, 245);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(44, 17);
+            this.label4.TabIndex = 16;
+            this.label4.Text = "设备名";
+            // 
+            // selectByName
+            // 
+            this.selectByName.Location = new System.Drawing.Point(1014, 242);
+            this.selectByName.Name = "selectByName";
+            this.selectByName.Size = new System.Drawing.Size(100, 23);
+            this.selectByName.TabIndex = 17;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(947, 281);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(56, 17);
+            this.label5.TabIndex = 18;
+            this.label5.Text = "购买时间";
+            // 
+            // selectByBuyTime
+            // 
+            this.selectByBuyTime.Location = new System.Drawing.Point(990, 301);
+            this.selectByBuyTime.Name = "selectByBuyTime";
+            this.selectByBuyTime.Size = new System.Drawing.Size(155, 23);
+            this.selectByBuyTime.TabIndex = 19;
+            this.selectByBuyTime.ValueChanged += new System.EventHandler(this.selectByWTime_ValueChanged);
+            // 
+            // selectByBuyTime2
+            // 
+            this.selectByBuyTime2.Location = new System.Drawing.Point(990, 332);
+            this.selectByBuyTime2.Name = "selectByBuyTime2";
+            this.selectByBuyTime2.Size = new System.Drawing.Size(154, 23);
+            this.selectByBuyTime2.TabIndex = 21;
+            this.selectByBuyTime2.ValueChanged += new System.EventHandler(this.selectByWTime_ValueChanged);
+            // 
+            // selectDpBox
+            // 
+            this.selectDpBox.FormattingEnabled = true;
+            this.selectDpBox.Location = new System.Drawing.Point(1014, 423);
+            this.selectDpBox.Name = "selectDpBox";
+            this.selectDpBox.Size = new System.Drawing.Size(121, 25);
+            this.selectDpBox.TabIndex = 22;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(945, 431);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(56, 17);
+            this.label7.TabIndex = 23;
+            this.label7.Text = "负责部门";
+            // 
+            // selectButton
+            // 
+            this.selectButton.Location = new System.Drawing.Point(998, 492);
+            this.selectButton.Name = "selectButton";
+            this.selectButton.Size = new System.Drawing.Size(75, 23);
+            this.selectButton.TabIndex = 24;
+            this.selectButton.Text = "联合查询";
+            this.selectButton.UseVisualStyleBackColor = true;
+            this.selectButton.Click += new System.EventHandler(this.selectButton_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(990, 374);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(101, 23);
+            this.button1.TabIndex = 25;
+            this.button1.Text = "购买时间重置";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(948, 304);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(32, 17);
+            this.label6.TabIndex = 26;
+            this.label6.Text = "起始";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(948, 336);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(32, 17);
+            this.label8.TabIndex = 27;
+            this.label8.Text = "结束";
             // 
             // EqForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1147, 527);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.selectButton);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.selectDpBox);
+            this.Controls.Add(this.selectByBuyTime2);
+            this.Controls.Add(this.selectByBuyTime);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.selectByName);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.selectBySer);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.selectByIdBox);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.updataEq);
             this.Controls.Add(this.deleteEq);
             this.Controls.Add(this.Reflash);
@@ -206,6 +386,7 @@
             this.Load += new System.EventHandler(this.EqForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.EqDataGridView)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -227,5 +408,21 @@
         private Button Reflash;
         private Button deleteEq;
         private Button updataEq;
+        private Label label1;
+        private Label label2;
+        private TextBox selectByIdBox;
+        private Label label3;
+        private TextBox selectBySer;
+        private Label label4;
+        private TextBox selectByName;
+        private Label label5;
+        private DateTimePicker selectByBuyTime;
+        private DateTimePicker selectByBuyTime2;
+        private ComboBox selectDpBox;
+        private Label label7;
+        private Button selectButton;
+        private Button button1;
+        private Label label6;
+        private Label label8;
     }
 }

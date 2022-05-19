@@ -100,7 +100,7 @@ namespace MSEM_Dev.page.EqFormChildred
 
 
                 LOG log = new LOG();
-                log.addLog(goble.Goble.Name,"添加设备","设备");
+                log.addLog(goble.Goble.Name,"添加设备","设备id: "+dr[0]);
 
                 MessageBox.Show("添加成功");
                 this.Close();
