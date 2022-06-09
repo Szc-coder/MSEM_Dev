@@ -45,6 +45,9 @@ namespace MSEM_Dev.page
             this.修改密码ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.退出登录ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.indexPanel = new System.Windows.Forms.Panel();
+            this.作业ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.链表查询ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.多选查询ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.IndexMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,7 +64,8 @@ namespace MSEM_Dev.page
             this.设备维修申请受理ToolStripMenuItem,
             this.设备借还申请审核ToolStripMenuItem,
             this.消息发布ToolStripMenuItem,
-            this.个人中心ToolStripMenuItem});
+            this.个人中心ToolStripMenuItem,
+            this.作业ToolStripMenuItem});
             this.IndexMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.IndexMenuStrip.Name = "IndexMenuStrip";
             this.IndexMenuStrip.Size = new System.Drawing.Size(1187, 25);
@@ -150,14 +154,14 @@ namespace MSEM_Dev.page
             // 修改密码ToolStripMenuItem
             // 
             this.修改密码ToolStripMenuItem.Name = "修改密码ToolStripMenuItem";
-            this.修改密码ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.修改密码ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.修改密码ToolStripMenuItem.Text = "修改密码";
             this.修改密码ToolStripMenuItem.Click += new System.EventHandler(this.修改密码ToolStripMenuItem_Click);
             // 
             // 退出登录ToolStripMenuItem
             // 
             this.退出登录ToolStripMenuItem.Name = "退出登录ToolStripMenuItem";
-            this.退出登录ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.退出登录ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.退出登录ToolStripMenuItem.Text = "退出登录";
             this.退出登录ToolStripMenuItem.Click += new System.EventHandler(this.退出登录ToolStripMenuItem_Click);
             // 
@@ -167,6 +171,29 @@ namespace MSEM_Dev.page
             this.indexPanel.Name = "indexPanel";
             this.indexPanel.Size = new System.Drawing.Size(1163, 566);
             this.indexPanel.TabIndex = 2;
+            // 
+            // 作业ToolStripMenuItem
+            // 
+            this.作业ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.链表查询ToolStripMenuItem,
+            this.多选查询ToolStripMenuItem});
+            this.作业ToolStripMenuItem.Name = "作业ToolStripMenuItem";
+            this.作业ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
+            this.作业ToolStripMenuItem.Text = "作业";
+            // 
+            // 链表查询ToolStripMenuItem
+            // 
+            this.链表查询ToolStripMenuItem.Name = "链表查询ToolStripMenuItem";
+            this.链表查询ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.链表查询ToolStripMenuItem.Text = "链表查询";
+            this.链表查询ToolStripMenuItem.Click += new System.EventHandler(this.链表查询ToolStripMenuItem_Click);
+            // 
+            // 多选查询ToolStripMenuItem
+            // 
+            this.多选查询ToolStripMenuItem.Name = "多选查询ToolStripMenuItem";
+            this.多选查询ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.多选查询ToolStripMenuItem.Text = "多选查询";
+            this.多选查询ToolStripMenuItem.Click += new System.EventHandler(this.多选查询ToolStripMenuItem_Click);
             // 
             // index
             // 
@@ -203,5 +230,8 @@ namespace MSEM_Dev.page
         private ToolStripMenuItem 个人中心ToolStripMenuItem;
         private ToolStripMenuItem 修改密码ToolStripMenuItem;
         private ToolStripMenuItem 退出登录ToolStripMenuItem;
+        private ToolStripMenuItem 作业ToolStripMenuItem;
+        private ToolStripMenuItem 链表查询ToolStripMenuItem;
+        private ToolStripMenuItem 多选查询ToolStripMenuItem;
     }
 }

@@ -20,14 +20,11 @@ namespace MSEM_Dev.page
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
-            
 
             if(!string.IsNullOrEmpty(userNameTextBox.Text )||Valied.isTrueLen(passwordTextBox.Text,8,20))
             {
-                string SqlString = string.Format($"select * from MEMS.[user] where phone = '{userNameTextBox.Text}' and password = '{passwordTextBox.Text}'");
-                SqlDataReader dataReader = dataBase.getsdr(SqlString);
-                bool havCount = dataReader.Read();
-                if(havCount)
+                bool isTruePwd = Valied.cheakUsernamePwa(userNameTextBox.Text, passwordTextBox.Text);
+                if(isTruePwd)
                 {
                     string sql = $"select name, role_name ,department,phone,u.id from MEMS.[user] as u join MEMS.[role_class] as rc on rc.id = u.role where phone = '{userNameTextBox.Text}'";
                     SqlDataReader role = dataBase.getsdr(sql);

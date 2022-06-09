@@ -31,9 +31,9 @@
             this.DpComBox = new System.Windows.Forms.ComboBox();
             this.buyTimeBox = new System.Windows.Forms.DateTimePicker();
             this.WhTimeBox = new System.Windows.Forms.DateTimePicker();
-            this.locationBox = new System.Windows.Forms.TextBox();
+            this.numCob = new System.Windows.Forms.TextBox();
             this.EqNameBox = new System.Windows.Forms.TextBox();
-            this.EqNumBox = new System.Windows.Forms.TextBox();
+            this.locationBox = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -42,15 +42,19 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.spullierBox = new System.Windows.Forms.ComboBox();
+            this.supllierBox = new System.Windows.Forms.ComboBox();
             this.claBox = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.serBox = new System.Windows.Forms.TextBox();
+            this.单价 = new System.Windows.Forms.Label();
+            this.onePriBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // DpComBox
             // 
             this.DpComBox.FormattingEnabled = true;
-            this.DpComBox.Location = new System.Drawing.Point(308, 104);
+            this.DpComBox.Location = new System.Drawing.Point(307, 54);
             this.DpComBox.Name = "DpComBox";
             this.DpComBox.Size = new System.Drawing.Size(121, 25);
             this.DpComBox.TabIndex = 0;
@@ -69,27 +73,27 @@
             this.WhTimeBox.Size = new System.Drawing.Size(200, 23);
             this.WhTimeBox.TabIndex = 2;
             // 
-            // locationBox
+            // numCob
             // 
-            this.locationBox.Location = new System.Drawing.Point(308, 184);
-            this.locationBox.Name = "locationBox";
-            this.locationBox.Size = new System.Drawing.Size(100, 23);
-            this.locationBox.TabIndex = 3;
+            this.numCob.Location = new System.Drawing.Point(307, 246);
+            this.numCob.Name = "numCob";
+            this.numCob.Size = new System.Drawing.Size(100, 23);
+            this.numCob.TabIndex = 3;
             // 
             // EqNameBox
             // 
-            this.EqNameBox.Location = new System.Drawing.Point(308, 276);
+            this.EqNameBox.Location = new System.Drawing.Point(307, 134);
             this.EqNameBox.Name = "EqNameBox";
             this.EqNameBox.Size = new System.Drawing.Size(100, 23);
             this.EqNameBox.TabIndex = 4;
             // 
-            // EqNumBox
+            // locationBox
             // 
-            this.EqNumBox.Location = new System.Drawing.Point(575, 278);
-            this.EqNumBox.Multiline = true;
-            this.EqNumBox.Name = "EqNumBox";
-            this.EqNumBox.Size = new System.Drawing.Size(200, 98);
-            this.EqNumBox.TabIndex = 5;
+            this.locationBox.Location = new System.Drawing.Point(575, 278);
+            this.locationBox.Multiline = true;
+            this.locationBox.Name = "locationBox";
+            this.locationBox.Size = new System.Drawing.Size(200, 98);
+            this.locationBox.TabIndex = 5;
             // 
             // button1
             // 
@@ -104,7 +108,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(240, 107);
+            this.label1.Location = new System.Drawing.Point(239, 57);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(56, 17);
             this.label1.TabIndex = 7;
@@ -131,7 +135,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(240, 189);
+            this.label4.Location = new System.Drawing.Point(239, 139);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(56, 17);
             this.label4.TabIndex = 10;
@@ -149,7 +153,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(240, 281);
+            this.label6.Location = new System.Drawing.Point(239, 249);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(56, 17);
             this.label6.TabIndex = 12;
@@ -158,24 +162,24 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(240, 359);
+            this.label7.Location = new System.Drawing.Point(239, 309);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(44, 17);
             this.label7.TabIndex = 13;
             this.label7.Text = "提供商";
             // 
-            // spullierBox
+            // supllierBox
             // 
-            this.spullierBox.FormattingEnabled = true;
-            this.spullierBox.Location = new System.Drawing.Point(308, 356);
-            this.spullierBox.Name = "spullierBox";
-            this.spullierBox.Size = new System.Drawing.Size(121, 25);
-            this.spullierBox.TabIndex = 15;
+            this.supllierBox.FormattingEnabled = true;
+            this.supllierBox.Location = new System.Drawing.Point(307, 306);
+            this.supllierBox.Name = "supllierBox";
+            this.supllierBox.Size = new System.Drawing.Size(121, 25);
+            this.supllierBox.TabIndex = 15;
             // 
             // claBox
             // 
             this.claBox.FormattingEnabled = true;
-            this.claBox.Location = new System.Drawing.Point(308, 418);
+            this.claBox.Location = new System.Drawing.Point(307, 368);
             this.claBox.Name = "claBox";
             this.claBox.Size = new System.Drawing.Size(121, 25);
             this.claBox.TabIndex = 17;
@@ -183,20 +187,56 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(240, 421);
+            this.label8.Location = new System.Drawing.Point(239, 371);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(32, 17);
             this.label8.TabIndex = 16;
             this.label8.Text = "分类";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(239, 200);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(44, 17);
+            this.label9.TabIndex = 18;
+            this.label9.Text = "序列号";
+            // 
+            // serBox
+            // 
+            this.serBox.Location = new System.Drawing.Point(307, 197);
+            this.serBox.Name = "serBox";
+            this.serBox.Size = new System.Drawing.Size(100, 23);
+            this.serBox.TabIndex = 19;
+            // 
+            // 单价
+            // 
+            this.单价.AutoSize = true;
+            this.单价.Location = new System.Drawing.Point(239, 432);
+            this.单价.Name = "单价";
+            this.单价.Size = new System.Drawing.Size(32, 17);
+            this.单价.TabIndex = 20;
+            this.单价.Text = "单价";
+            // 
+            // onePriBox
+            // 
+            this.onePriBox.Location = new System.Drawing.Point(307, 429);
+            this.onePriBox.Name = "onePriBox";
+            this.onePriBox.Size = new System.Drawing.Size(100, 23);
+            this.onePriBox.TabIndex = 21;
             // 
             // EqWhForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1147, 527);
+            this.Controls.Add(this.onePriBox);
+            this.Controls.Add(this.单价);
+            this.Controls.Add(this.serBox);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.claBox);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.spullierBox);
+            this.Controls.Add(this.supllierBox);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -205,14 +245,15 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.EqNumBox);
-            this.Controls.Add(this.EqNameBox);
             this.Controls.Add(this.locationBox);
+            this.Controls.Add(this.EqNameBox);
+            this.Controls.Add(this.numCob);
             this.Controls.Add(this.WhTimeBox);
             this.Controls.Add(this.buyTimeBox);
             this.Controls.Add(this.DpComBox);
             this.Name = "EqWhForm";
             this.Text = "EqWhForm";
+            this.Load += new System.EventHandler(this.EqWhForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -223,9 +264,9 @@
         private ComboBox DpComBox;
         private DateTimePicker buyTimeBox;
         private DateTimePicker WhTimeBox;
-        private TextBox locationBox;
+        private TextBox numCob;
         private TextBox EqNameBox;
-        private TextBox EqNumBox;
+        private TextBox locationBox;
         private Button button1;
         private Label label1;
         private Label label2;
@@ -234,8 +275,12 @@
         private Label label5;
         private Label label6;
         private Label label7;
-        private ComboBox spullierBox;
+        private ComboBox supllierBox;
         private ComboBox claBox;
         private Label label8;
+        private Label label9;
+        private TextBox serBox;
+        private Label 单价;
+        private TextBox onePriBox;
     }
 }

@@ -17,7 +17,7 @@ namespace MSEM_Dev.page
     {
         // 采用全局变量方式定义dataset和SqlDataAdapter
 
-        DataBase data = new DataBase();
+        private DataBase data = new DataBase();
         public static DataSet dataset = new DataSet();
         public static SqlDataAdapter sdawitnScb = null;
         private Boolean WTimeIsChange = false;
@@ -31,8 +31,8 @@ namespace MSEM_Dev.page
         public void DataGridReflash()
         {
             string sql = "";
-            dataset.Clear();
-            EqDataGridView.DataSource = null;
+
+
             if (Goble.Role_name == "admin")
             {
                 sql = "select * from MEMS.[equipment]";
@@ -42,26 +42,9 @@ namespace MSEM_Dev.page
                 sql = $"select * from MEMS.[equipment] where responsible_dp = '{Goble.Dp}'";
             }
 
-            if (sdawitnScb == null)
-            {
-                sdawitnScb = data.getSdaWithSqlCommandBuilder(sql);
-                sdawitnScb.Fill(dataset);
-                EqDataGridView.DataSource = dataset.Tables[0];
-            }
-            else
-            {
-                sdawitnScb.Fill(dataset);
-                EqDataGridView.DataSource = dataset.Tables[0];
-            }
-
-            // try
-            // {
-            //
-            // }
-            // catch (Exception ex)
-            // {
-            //     MessageBox.Show("加载错误，请点击刷新!");
-            // }
+            sdawitnScb = data.getSdaWithSqlCommandBuilder(sql);
+            sdawitnScb.Fill(dataset);
+            EqDataGridView.DataSource = dataset.Tables[0];
         }
 
         public void init()
@@ -85,7 +68,11 @@ namespace MSEM_Dev.page
 
         private void Reflash_Click(object sender, EventArgs e)
         {
-            DataGridReflash();
+            EqDataGridView.DataSource = dataset.Tables[0];
+            selectDpBox.SelectedIndex = -1;
+            WTimeIsChange = false;
+            selectByBuyTime.Value = DateTime.Now;
+            selectByBuyTime2.Value = DateTime.Now;
         }
 
         private void AddEq_Click(object sender, EventArgs e)
@@ -100,15 +87,10 @@ namespace MSEM_Dev.page
             {
                 int row = EqDataGridView.SelectedCells[0].RowIndex;
                 String id = EqDataGridView.Rows[row].Cells[0].Value.ToString();
-                // String Sql = $"DELETE FROM MEMS.[equipment] WHERE id = '{id}'";
                 DialogResult dialogResult = MessageBox.Show("请注意，该操作不可逆", "警告", MessageBoxButtons.OKCancel,
                     MessageBoxIcon.Warning);
                 if (dialogResult == DialogResult.OK)
-                {  
-                    // DataBase dataBase = new DataBase();
-                    // dataBase.dosqlcom(Sql);
-                    // MessageBox.Show("删除成功!");
-                    // Refresh();
+                {
                     dataset.Tables[0].Rows[EqDataGridView.SelectedCells[0].RowIndex].Delete();
                     sdawitnScb.Update(dataset);
                     LOG log = new LOG();
@@ -132,6 +114,8 @@ namespace MSEM_Dev.page
 
         private void selectButton_Click(object sender, EventArgs e)
         {
+            EqDataGridView.DataSource = dataset.Tables[0];
+
             string id = selectByIdBox.Text;
             string ser = selectBySer.Text;
             string name = selectByName.Text;
@@ -201,5 +185,8 @@ namespace MSEM_Dev.page
             selectByBuyTime.Value = DateTime.Now;
             selectByBuyTime2.Value = DateTime.Now;
         }
+
+
+
     }
 }

@@ -38,9 +38,6 @@ namespace MSEM_Dev.page
                 return;
             }
 
-
-
-
             if (!Valied.isPhone(Phone.Text)||Pwd.Text!=Pwd2.Text||!Valied.isTrueLen(Pwd.Text,7,21)||!Valied.isTrueLen(name.Text,0,10)||!Valied.isTrueNum(Convert.ToInt32(age.Text),17,120))
             {
                 MessageBox.Show("个人信息错误！请重新输入");
@@ -52,7 +49,8 @@ namespace MSEM_Dev.page
             string ansDpId = "";
             dpId.ToList().ForEach(dp => { ansDpId = dp.ToString(); });
             string guid = MyGuid.GetGUID();
-            string sql = string.Format($"insert into MEMS.[user] values('{guid}','{Pwd.Text}','{name.Text}','{Phone.Text}','{sex.Text}','{age.Text}','{2}','{ansDpId}')");
+            string md5Pwd = Valied.md5Hash(Pwd.Text);
+            string sql = string.Format($"insert into MEMS.[user] values('{guid}','{md5Pwd}','{name.Text}','{Phone.Text}','{sex.Text}','{age.Text}','{2}','{ansDpId}')");
             dataBase.dosqlcom(sql);
 
             

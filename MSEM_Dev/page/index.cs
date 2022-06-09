@@ -187,5 +187,17 @@ namespace MSEM_Dev.page
         {
             this.Close();
         }
+
+        private void 链表查询ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            morePageSelect mo = new morePageSelect();
+            mo.ShowDialog();
+        }
+
+        private void 多选查询ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            moreOptionSelect mo = new moreOptionSelect();
+            mo.ShowDialog();
+        }
     }
 }

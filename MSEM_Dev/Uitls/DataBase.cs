@@ -6,9 +6,9 @@ namespace MSEM_Dev.Uitls
     class DataBase
     {
         public static SqlConnection My_Conn;
-        public static string openConnstr = @"Server=DESKTOP-Q0IJ4KU;Database=MEMS;User ID=sa;Password=qwe123580.00;";
+        public static string openConnstr = @"Server=DESKTOP-Q0IJ4KU;Database=MEMS;User ID=sa;Password=qwe123580.00;MultipleActiveResultSets=true";
 
-        public static SqlConnection getcon()
+        public SqlConnection getcon()
         {
             My_Conn = new SqlConnection(openConnstr);
             My_Conn.Open();
@@ -54,7 +54,6 @@ namespace MSEM_Dev.Uitls
             DataSet dataSet = new DataSet();
             SqlDataAdapter sqlda = new SqlDataAdapter(sqlstr, My_Conn);
             sqlda.Fill(dataSet, tableName);
-            conn_close();
             return dataSet;
         }
 
@@ -69,7 +68,6 @@ namespace MSEM_Dev.Uitls
             }
             
             dt.Fill(dataTable);
-            conn_close();
             return dataTable;
         }
 
