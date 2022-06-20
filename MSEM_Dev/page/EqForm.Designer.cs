@@ -49,6 +49,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.serial_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -87,12 +88,11 @@
             this.EqDataGridView.Location = new System.Drawing.Point(0, 0);
             this.EqDataGridView.MultiSelect = false;
             this.EqDataGridView.Name = "EqDataGridView";
-            this.EqDataGridView.ReadOnly = true;
             this.EqDataGridView.RowHeadersVisible = false;
             this.EqDataGridView.RowTemplate.Height = 25;
             this.EqDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.EqDataGridView.Size = new System.Drawing.Size(922, 527);
-            this.EqDataGridView.TabIndex = 1;
+            this.EqDataGridView.Size = new System.Drawing.Size(922, 568);
+            this.EqDataGridView.TabIndex = 0;
             // 
             // AddEq
             // 
@@ -235,7 +235,7 @@
             // 
             // selectButton
             // 
-            this.selectButton.Location = new System.Drawing.Point(998, 492);
+            this.selectButton.Location = new System.Drawing.Point(1005, 469);
             this.selectButton.Name = "selectButton";
             this.selectButton.Size = new System.Drawing.Size(75, 23);
             this.selectButton.TabIndex = 24;
@@ -271,6 +271,16 @@
             this.label8.TabIndex = 27;
             this.label8.Text = "结束";
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(990, 515);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(109, 23);
+            this.button2.TabIndex = 28;
+            this.button2.Text = "设备维修申请";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // id
             // 
             this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
@@ -278,7 +288,6 @@
             this.id.Frozen = true;
             this.id.HeaderText = "id";
             this.id.Name = "id";
-            this.id.ReadOnly = true;
             this.id.Width = 82;
             // 
             // name
@@ -288,7 +297,6 @@
             this.name.Frozen = true;
             this.name.HeaderText = "设备名";
             this.name.Name = "name";
-            this.name.ReadOnly = true;
             this.name.Width = 82;
             // 
             // serial_number
@@ -298,7 +306,6 @@
             this.serial_number.Frozen = true;
             this.serial_number.HeaderText = "序列号";
             this.serial_number.Name = "serial_number";
-            this.serial_number.ReadOnly = true;
             this.serial_number.Width = 82;
             // 
             // purchase_time
@@ -308,7 +315,6 @@
             this.purchase_time.Frozen = true;
             this.purchase_time.HeaderText = "购买时间";
             this.purchase_time.Name = "purchase_time";
-            this.purchase_time.ReadOnly = true;
             this.purchase_time.Width = 82;
             // 
             // warehousing_time
@@ -318,7 +324,6 @@
             this.warehousing_time.Frozen = true;
             this.warehousing_time.HeaderText = "入库时间";
             this.warehousing_time.Name = "warehousing_time";
-            this.warehousing_time.ReadOnly = true;
             this.warehousing_time.Width = 82;
             // 
             // location
@@ -328,7 +333,6 @@
             this.location.Frozen = true;
             this.location.HeaderText = "位置";
             this.location.Name = "location";
-            this.location.ReadOnly = true;
             this.location.Width = 83;
             // 
             // responsible_dp
@@ -336,46 +340,43 @@
             this.responsible_dp.DataPropertyName = "responsible_dp";
             this.responsible_dp.HeaderText = "负责部门";
             this.responsible_dp.Name = "responsible_dp";
-            this.responsible_dp.ReadOnly = true;
             // 
             // state
             // 
             this.state.DataPropertyName = "state";
             this.state.HeaderText = "状态";
             this.state.Name = "state";
-            this.state.ReadOnly = true;
             // 
             // price
             // 
             this.price.DataPropertyName = "price";
             this.price.HeaderText = "价格";
             this.price.Name = "price";
-            this.price.ReadOnly = true;
             // 
             // supplier_id
             // 
             this.supplier_id.DataPropertyName = "supplier_id";
             this.supplier_id.HeaderText = "供应商id";
             this.supplier_id.Name = "supplier_id";
-            this.supplier_id.ReadOnly = true;
             // 
             // Column1
             // 
+            this.Column1.DataPropertyName = "class";
             this.Column1.HeaderText = "分类";
             this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
             // 
             // Column2
             // 
+            this.Column2.DataPropertyName = "respon_user_id";
             this.Column2.HeaderText = "负责人";
             this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
             // 
             // EqForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1147, 527);
+            this.ClientSize = new System.Drawing.Size(1149, 568);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.button1);
@@ -430,6 +431,7 @@
         private Button button1;
         private Label label6;
         private Label label8;
+        private Button button2;
         private DataGridViewTextBoxColumn id;
         private DataGridViewTextBoxColumn name;
         private DataGridViewTextBoxColumn serial_number;

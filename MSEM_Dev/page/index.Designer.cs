@@ -36,7 +36,6 @@ namespace MSEM_Dev.page
             this.设备申报ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.设备入库ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.设备借还ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.设备维修申请ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.申报审核ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.设备维修申请受理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.设备借还申请审核ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -45,9 +44,6 @@ namespace MSEM_Dev.page
             this.修改密码ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.退出登录ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.indexPanel = new System.Windows.Forms.Panel();
-            this.作业ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.链表查询ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.多选查询ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.IndexMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,13 +55,11 @@ namespace MSEM_Dev.page
             this.设备申报ToolStripMenuItem,
             this.设备入库ToolStripMenuItem,
             this.设备借还ToolStripMenuItem,
-            this.设备维修申请ToolStripMenuItem,
             this.申报审核ToolStripMenuItem,
             this.设备维修申请受理ToolStripMenuItem,
             this.设备借还申请审核ToolStripMenuItem,
             this.消息发布ToolStripMenuItem,
-            this.个人中心ToolStripMenuItem,
-            this.作业ToolStripMenuItem});
+            this.个人中心ToolStripMenuItem});
             this.IndexMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.IndexMenuStrip.Name = "IndexMenuStrip";
             this.IndexMenuStrip.Size = new System.Drawing.Size(1187, 25);
@@ -107,13 +101,6 @@ namespace MSEM_Dev.page
             this.设备借还ToolStripMenuItem.Text = "设备借还";
             this.设备借还ToolStripMenuItem.Click += new System.EventHandler(this.设备借还ToolStripMenuItem_Click);
             // 
-            // 设备维修申请ToolStripMenuItem
-            // 
-            this.设备维修申请ToolStripMenuItem.Name = "设备维修申请ToolStripMenuItem";
-            this.设备维修申请ToolStripMenuItem.Size = new System.Drawing.Size(92, 21);
-            this.设备维修申请ToolStripMenuItem.Text = "设备维修申请";
-            this.设备维修申请ToolStripMenuItem.Click += new System.EventHandler(this.设备维修申请ToolStripMenuItem_Click);
-            // 
             // 申报审核ToolStripMenuItem
             // 
             this.申报审核ToolStripMenuItem.Name = "申报审核ToolStripMenuItem";
@@ -139,7 +126,7 @@ namespace MSEM_Dev.page
             // 
             this.消息发布ToolStripMenuItem.Name = "消息发布ToolStripMenuItem";
             this.消息发布ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
-            this.消息发布ToolStripMenuItem.Text = "消息发布";
+            this.消息发布ToolStripMenuItem.Text = "系统消息";
             this.消息发布ToolStripMenuItem.Click += new System.EventHandler(this.消息发布ToolStripMenuItem_Click);
             // 
             // 个人中心ToolStripMenuItem
@@ -172,29 +159,6 @@ namespace MSEM_Dev.page
             this.indexPanel.Size = new System.Drawing.Size(1163, 566);
             this.indexPanel.TabIndex = 2;
             // 
-            // 作业ToolStripMenuItem
-            // 
-            this.作业ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.链表查询ToolStripMenuItem,
-            this.多选查询ToolStripMenuItem});
-            this.作业ToolStripMenuItem.Name = "作业ToolStripMenuItem";
-            this.作业ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
-            this.作业ToolStripMenuItem.Text = "作业";
-            // 
-            // 链表查询ToolStripMenuItem
-            // 
-            this.链表查询ToolStripMenuItem.Name = "链表查询ToolStripMenuItem";
-            this.链表查询ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.链表查询ToolStripMenuItem.Text = "链表查询";
-            this.链表查询ToolStripMenuItem.Click += new System.EventHandler(this.链表查询ToolStripMenuItem_Click);
-            // 
-            // 多选查询ToolStripMenuItem
-            // 
-            this.多选查询ToolStripMenuItem.Name = "多选查询ToolStripMenuItem";
-            this.多选查询ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.多选查询ToolStripMenuItem.Text = "多选查询";
-            this.多选查询ToolStripMenuItem.Click += new System.EventHandler(this.多选查询ToolStripMenuItem_Click);
-            // 
             // index
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -221,7 +185,6 @@ namespace MSEM_Dev.page
         private ToolStripMenuItem 设备入库ToolStripMenuItem;
         private ToolStripMenuItem 设备借还ToolStripMenuItem;
         private ToolStripMenuItem 设备申报ToolStripMenuItem;
-        private ToolStripMenuItem 设备维修申请ToolStripMenuItem;
         private ToolStripMenuItem 消息发布ToolStripMenuItem;
         private ToolStripMenuItem 申报审核ToolStripMenuItem;
         private Panel indexPanel;
@@ -230,8 +193,5 @@ namespace MSEM_Dev.page
         private ToolStripMenuItem 个人中心ToolStripMenuItem;
         private ToolStripMenuItem 修改密码ToolStripMenuItem;
         private ToolStripMenuItem 退出登录ToolStripMenuItem;
-        private ToolStripMenuItem 作业ToolStripMenuItem;
-        private ToolStripMenuItem 链表查询ToolStripMenuItem;
-        private ToolStripMenuItem 多选查询ToolStripMenuItem;
     }
 }

@@ -49,25 +49,9 @@ namespace MSEM_Dev.page
                 设备申报ToolStripMenuItem.Visible = false;
                 设备入库ToolStripMenuItem.Visible = false;
                 设备借还ToolStripMenuItem.Visible = false;
-                设备维修申请ToolStripMenuItem.Visible = false;
                 申报审核ToolStripMenuItem.Visible = false;
                 设备借还申请审核ToolStripMenuItem.Visible = false;
             }
-
-            /*
-                状态
-                0:报废
-                1:正常
-                2:申请维修中
-                3:申请保养中
-             
-             */
-
-            goble.eqState.eqStates.Add(0, "报废");
-            goble.eqState.eqStates.Add(1, "正常");
-            goble.eqState.eqStates.Add(2, "申请维修中");
-            goble.eqState.eqStates.Add(3, "申请保养中");
-
 
         }
 
@@ -120,16 +104,6 @@ namespace MSEM_Dev.page
             this.indexPanel.Controls.Clear();
             this.indexPanel.Controls.Add(eqDeclare);
             eqDeclare.Show();
-        }
-
-        private void 设备维修申请ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            EqReairForm eq = new EqReairForm();
-            eq.FormBorderStyle = FormBorderStyle.None;
-            eq.TopLevel = false;
-            this.indexPanel.Controls.Clear();
-            this.indexPanel.Controls.Add(eq);
-            eq.Show();
         }
 
         private void 消息发布ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -188,16 +162,5 @@ namespace MSEM_Dev.page
             this.Close();
         }
 
-        private void 链表查询ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            morePageSelect mo = new morePageSelect();
-            mo.ShowDialog();
-        }
-
-        private void 多选查询ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            moreOptionSelect mo = new moreOptionSelect();
-            mo.ShowDialog();
-        }
     }
 }

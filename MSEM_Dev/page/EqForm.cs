@@ -106,7 +106,7 @@ namespace MSEM_Dev.page
         private void updataEq_Click(object sender, EventArgs e)
         {
             updataEq eq = new updataEq();
-            int row = EqDataGridView.SelectedCells[0].RowIndex;
+            int row = EqDataGridView.SelectedRows[0].Index;
             String id = EqDataGridView.Rows[row].Cells[0].Value.ToString();
             eq.id = id;
             eq.Show();
@@ -186,7 +186,15 @@ namespace MSEM_Dev.page
             selectByBuyTime2.Value = DateTime.Now;
         }
 
-
-
+        private void button2_Click(object sender, EventArgs e)
+        {
+            int row = EqDataGridView.SelectedCells[0].RowIndex;
+            string EqName = EqDataGridView.Rows[row].Cells[1].Value.ToString();
+            string EqId = EqDataGridView.Rows[row].Cells[0].Value.ToString();
+            EqReairForm eqReairForm = new EqReairForm();
+            eqReairForm.EqName = EqName;
+            eqReairForm.EqID = EqId;
+            eqReairForm.ShowDialog();
+        }
     }
 }

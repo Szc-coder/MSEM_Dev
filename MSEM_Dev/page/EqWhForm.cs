@@ -24,9 +24,9 @@ namespace MSEM_Dev.page
         private void init()
         {
 
-            String selectSup = "select id,name from MEMS.[supplier]";
-            String selectCla = "select id,name from MEMS.[class]";
-            String SelectDp = "select dp_id,name from MEMS.[department]";
+            String selectSup = "select id, name from MEMS.[supplier]";
+            String selectCla = "select id, name from MEMS.[class]";
+            String SelectDp = "select dp_id, name from MEMS.[department]";
 
 
 
@@ -84,7 +84,7 @@ namespace MSEM_Dev.page
                     string insertEqSql = $"insert into MEMS.equipment values('{eqid}','{EqNameBox.Text}'," +
                                          $"'{serBox.Text}','{buyTimeBox.Value.ToString()}','{WhTimeBox.Value.ToString()}'," +
                                          $"'{locationBox.Text}','{DpComBox.SelectedValue.ToString()}','已入库'," +
-                                         $"{Convert.ToInt32(onePriBox.Text)},'{supllierBox.SelectedValue}','{claBox.SelectedValue}')";
+                                         $"{Convert.ToInt32(onePriBox.Text)},'{supllierBox.SelectedValue}','{claBox.SelectedValue}','{Goble.userId}')";
                     dataBase.dosqlcom(insertEqSql);
                     log.addLog("添加设备", "insert", $"eqId:{eqid}");
                 }
