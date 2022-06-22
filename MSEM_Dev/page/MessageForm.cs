@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace MSEM_Dev.page
 {
@@ -15,6 +16,18 @@ namespace MSEM_Dev.page
         public MessageForm()
         {
             InitializeComponent();
+        }
+
+        void init()
+        {
+            DataSet ds = new DataSet();
+            ds.ReadXml("..//..//..//source//Message.xml");
+            dataGridView1.DataSource = ds.Tables[0];
+        }
+
+        private void MessageForm_Load(object sender, EventArgs e)
+        {
+            init();
         }
     }
 }

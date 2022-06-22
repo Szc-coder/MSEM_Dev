@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MSEM_Dev.Uitls;
 using System.Data.SqlClient;
+using Microsoft.EntityFrameworkCore.Query.Internal;
 
 namespace MSEM_Dev.page
 {
@@ -57,8 +58,76 @@ namespace MSEM_Dev.page
         }
         private void button1_Click(object sender, EventArgs e)
         {
+            string[] ids = { };
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                DataGridViewCheckBoxCell ck = (DataGridViewCheckBoxCell)row.Cells[10];
+                if (Convert.ToBoolean(ck.Value))
+                {
+                    ids.Append(row.Cells[0].Value.ToString());
+                }
+            }
 
+            if (ids.Length < 1)
+            {
+                MessageBox.Show("未选择任何设备！");
+                return;
+            }
+
+            try
+            {
+                string idStrings = "";
+                foreach (var id in ids)
+                {
+                    idStrings += id + ",";
+                }
+
+                idStrings = idStrings.Substring(0, idStrings.Length - 1);
+
+                string sql = $"update purchase set status = '通过' where id in '{idStrings}'";
+                dataBase.dosqlcom(sql);
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show("系统异常!");
+            }
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string[] ids = { };
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                DataGridViewCheckBoxCell ck = (DataGridViewCheckBoxCell)row.Cells[10];
+                if (Convert.ToBoolean(ck.Value))
+                {
+                    ids.Append(row.Cells[0].Value.ToString());
+                }
+            }
+
+            if (ids.Length < 1)
+            {
+                MessageBox.Show("未选择任何设备！");
+                return;
+            }
+
+            try
+            {
+                string idStrings = "";
+                foreach (var id in ids)
+                {
+                    idStrings += id + ",";
+                }
+
+                idStrings = idStrings.Substring(0, idStrings.Length - 1);
+
+                string sql = $"update purchase set status = '驳回' where id in '{idStrings}'";
+                dataBase.dosqlcom(sql);
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show("系统异常!");
+            }
+        }
     }
 }

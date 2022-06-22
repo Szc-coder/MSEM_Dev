@@ -23,12 +23,9 @@ namespace MSEM_Dev.page
 
         private void init()
         {
-
             String selectSup = "select id, name from MEMS.[supplier]";
             String selectCla = "select id, name from MEMS.[class]";
             String SelectDp = "select dp_id, name from MEMS.[department]";
-
-
 
             String[] classIdAndNameList = { "id", "name" };
             String[] supllersIdAndNameList = { "id", "name" };
@@ -49,7 +46,6 @@ namespace MSEM_Dev.page
             DpComBox.DataSource = dpADataTable;
             DpComBox.ValueMember = "dp_id";
             DpComBox.DisplayMember = "name";
-
         }
 
         private void button1_Click(object sender, EventArgs e)
