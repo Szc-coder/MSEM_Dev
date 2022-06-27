@@ -32,15 +32,15 @@ namespace MSEM_Dev.page
             if (Goble.Role_name == "科室主任")
             {
                 申报审核ToolStripMenuItem.Visible = false;
-                设备维修申请受理ToolStripMenuItem.Visible = false;
+                //设备维修申请受理ToolStripMenuItem.Visible = false;
             }
 
             if (Goble.Role_name == "科室设备管理员")
             {
                 用户管理ToolStripMenuItem.Visible = false;
                 申报审核ToolStripMenuItem.Visible = false;
-                设备维修申请受理ToolStripMenuItem.Visible = false;
-                设备借还申请审核ToolStripMenuItem.Visible = false;
+                //设备维修申请受理ToolStripMenuItem.Visible = false;
+                //设备借还申请审核ToolStripMenuItem.Visible = false;
             }
 
             if (Goble.Role_name == "维修工程师")
@@ -50,7 +50,7 @@ namespace MSEM_Dev.page
                 设备入库ToolStripMenuItem.Visible = false;
                 设备借还ToolStripMenuItem.Visible = false;
                 申报审核ToolStripMenuItem.Visible = false;
-                设备借还申请审核ToolStripMenuItem.Visible = false;
+                //设备借还申请审核ToolStripMenuItem.Visible = false;
             }
 
         }

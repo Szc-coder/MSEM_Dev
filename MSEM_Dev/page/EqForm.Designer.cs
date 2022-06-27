@@ -29,6 +29,18 @@
         private void InitializeComponent()
         {
             this.EqDataGridView = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.serial_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.purchase_time = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.warehousing_time = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.location = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.responsible_dp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.state = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.supplier_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AddEq = new System.Windows.Forms.Button();
             this.Reflash = new System.Windows.Forms.Button();
             this.deleteEq = new System.Windows.Forms.Button();
@@ -50,18 +62,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.serial_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.purchase_time = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.warehousing_time = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.location = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.responsible_dp = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.state = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.supplier_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ToExcel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.EqDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -93,6 +94,97 @@
             this.EqDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.EqDataGridView.Size = new System.Drawing.Size(922, 568);
             this.EqDataGridView.TabIndex = 0;
+            this.EqDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.EqDataGridView_CellContentClick);
+            // 
+            // id
+            // 
+            this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.id.DataPropertyName = "id";
+            this.id.Frozen = true;
+            this.id.HeaderText = "id";
+            this.id.Name = "id";
+            this.id.Width = 82;
+            // 
+            // name
+            // 
+            this.name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.name.DataPropertyName = "name";
+            this.name.Frozen = true;
+            this.name.HeaderText = "设备名";
+            this.name.Name = "name";
+            this.name.Width = 82;
+            // 
+            // serial_number
+            // 
+            this.serial_number.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.serial_number.DataPropertyName = "serial_number";
+            this.serial_number.Frozen = true;
+            this.serial_number.HeaderText = "序列号";
+            this.serial_number.Name = "serial_number";
+            this.serial_number.Width = 82;
+            // 
+            // purchase_time
+            // 
+            this.purchase_time.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.purchase_time.DataPropertyName = "purchase_time";
+            this.purchase_time.Frozen = true;
+            this.purchase_time.HeaderText = "购买时间";
+            this.purchase_time.Name = "purchase_time";
+            this.purchase_time.Width = 82;
+            // 
+            // warehousing_time
+            // 
+            this.warehousing_time.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.warehousing_time.DataPropertyName = "warehousing_time";
+            this.warehousing_time.Frozen = true;
+            this.warehousing_time.HeaderText = "入库时间";
+            this.warehousing_time.Name = "warehousing_time";
+            this.warehousing_time.Width = 82;
+            // 
+            // location
+            // 
+            this.location.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.location.DataPropertyName = "location";
+            this.location.Frozen = true;
+            this.location.HeaderText = "位置";
+            this.location.Name = "location";
+            this.location.Width = 83;
+            // 
+            // responsible_dp
+            // 
+            this.responsible_dp.DataPropertyName = "responsible_dp";
+            this.responsible_dp.HeaderText = "负责部门";
+            this.responsible_dp.Name = "responsible_dp";
+            // 
+            // state
+            // 
+            this.state.DataPropertyName = "state";
+            this.state.HeaderText = "状态";
+            this.state.Name = "state";
+            // 
+            // price
+            // 
+            this.price.DataPropertyName = "price";
+            this.price.HeaderText = "价格";
+            this.price.Name = "price";
+            // 
+            // supplier_id
+            // 
+            this.supplier_id.DataPropertyName = "supplier_id";
+            this.supplier_id.HeaderText = "供应商id";
+            this.supplier_id.Name = "supplier_id";
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "class";
+            this.Column1.HeaderText = "分类";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "respon_user_id";
+            this.Column2.HeaderText = "负责人";
+            this.Column2.Name = "Column2";
             // 
             // AddEq
             // 
@@ -281,101 +373,22 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // id
+            // ToExcel
             // 
-            this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.id.DataPropertyName = "id";
-            this.id.Frozen = true;
-            this.id.HeaderText = "id";
-            this.id.Name = "id";
-            this.id.Width = 82;
-            // 
-            // name
-            // 
-            this.name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.name.DataPropertyName = "name";
-            this.name.Frozen = true;
-            this.name.HeaderText = "设备名";
-            this.name.Name = "name";
-            this.name.Width = 82;
-            // 
-            // serial_number
-            // 
-            this.serial_number.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.serial_number.DataPropertyName = "serial_number";
-            this.serial_number.Frozen = true;
-            this.serial_number.HeaderText = "序列号";
-            this.serial_number.Name = "serial_number";
-            this.serial_number.Width = 82;
-            // 
-            // purchase_time
-            // 
-            this.purchase_time.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.purchase_time.DataPropertyName = "purchase_time";
-            this.purchase_time.Frozen = true;
-            this.purchase_time.HeaderText = "购买时间";
-            this.purchase_time.Name = "purchase_time";
-            this.purchase_time.Width = 82;
-            // 
-            // warehousing_time
-            // 
-            this.warehousing_time.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.warehousing_time.DataPropertyName = "warehousing_time";
-            this.warehousing_time.Frozen = true;
-            this.warehousing_time.HeaderText = "入库时间";
-            this.warehousing_time.Name = "warehousing_time";
-            this.warehousing_time.Width = 82;
-            // 
-            // location
-            // 
-            this.location.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.location.DataPropertyName = "location";
-            this.location.Frozen = true;
-            this.location.HeaderText = "位置";
-            this.location.Name = "location";
-            this.location.Width = 83;
-            // 
-            // responsible_dp
-            // 
-            this.responsible_dp.DataPropertyName = "responsible_dp";
-            this.responsible_dp.HeaderText = "负责部门";
-            this.responsible_dp.Name = "responsible_dp";
-            // 
-            // state
-            // 
-            this.state.DataPropertyName = "state";
-            this.state.HeaderText = "状态";
-            this.state.Name = "state";
-            // 
-            // price
-            // 
-            this.price.DataPropertyName = "price";
-            this.price.HeaderText = "价格";
-            this.price.Name = "price";
-            // 
-            // supplier_id
-            // 
-            this.supplier_id.DataPropertyName = "supplier_id";
-            this.supplier_id.HeaderText = "供应商id";
-            this.supplier_id.Name = "supplier_id";
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "class";
-            this.Column1.HeaderText = "分类";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "respon_user_id";
-            this.Column2.HeaderText = "负责人";
-            this.Column2.Name = "Column2";
+            this.ToExcel.Location = new System.Drawing.Point(1005, 114);
+            this.ToExcel.Name = "ToExcel";
+            this.ToExcel.Size = new System.Drawing.Size(75, 23);
+            this.ToExcel.TabIndex = 29;
+            this.ToExcel.Text = "导出Excel";
+            this.ToExcel.UseVisualStyleBackColor = true;
+            this.ToExcel.Click += new System.EventHandler(this.ToExcel_Click);
             // 
             // EqForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1149, 568);
+            this.Controls.Add(this.ToExcel);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label6);
@@ -444,5 +457,6 @@
         private DataGridViewTextBoxColumn supplier_id;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
+        private Button ToExcel;
     }
 }

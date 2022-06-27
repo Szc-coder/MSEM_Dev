@@ -37,8 +37,6 @@ namespace MSEM_Dev.page
             this.设备入库ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.设备借还ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.申报审核ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.设备维修申请受理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.设备借还申请审核ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.消息发布ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.个人中心ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.修改密码ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -56,8 +54,6 @@ namespace MSEM_Dev.page
             this.设备入库ToolStripMenuItem,
             this.设备借还ToolStripMenuItem,
             this.申报审核ToolStripMenuItem,
-            this.设备维修申请受理ToolStripMenuItem,
-            this.设备借还申请审核ToolStripMenuItem,
             this.消息发布ToolStripMenuItem,
             this.个人中心ToolStripMenuItem});
             this.IndexMenuStrip.Location = new System.Drawing.Point(0, 0);
@@ -107,20 +103,6 @@ namespace MSEM_Dev.page
             this.申报审核ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
             this.申报审核ToolStripMenuItem.Text = "申报审核";
             this.申报审核ToolStripMenuItem.Click += new System.EventHandler(this.申报审核ToolStripMenuItem_Click);
-            // 
-            // 设备维修申请受理ToolStripMenuItem
-            // 
-            this.设备维修申请受理ToolStripMenuItem.Name = "设备维修申请受理ToolStripMenuItem";
-            this.设备维修申请受理ToolStripMenuItem.Size = new System.Drawing.Size(116, 21);
-            this.设备维修申请受理ToolStripMenuItem.Text = "设备维修申请受理";
-            this.设备维修申请受理ToolStripMenuItem.Click += new System.EventHandler(this.设备维修申请受理ToolStripMenuItem_Click);
-            // 
-            // 设备借还申请审核ToolStripMenuItem
-            // 
-            this.设备借还申请审核ToolStripMenuItem.Name = "设备借还申请审核ToolStripMenuItem";
-            this.设备借还申请审核ToolStripMenuItem.Size = new System.Drawing.Size(116, 21);
-            this.设备借还申请审核ToolStripMenuItem.Text = "设备借还申请审核";
-            this.设备借还申请审核ToolStripMenuItem.Click += new System.EventHandler(this.设备借还申请审核ToolStripMenuItem_Click);
             // 
             // 消息发布ToolStripMenuItem
             // 
@@ -188,8 +170,6 @@ namespace MSEM_Dev.page
         private ToolStripMenuItem 消息发布ToolStripMenuItem;
         private ToolStripMenuItem 申报审核ToolStripMenuItem;
         private Panel indexPanel;
-        private ToolStripMenuItem 设备维修申请受理ToolStripMenuItem;
-        private ToolStripMenuItem 设备借还申请审核ToolStripMenuItem;
         private ToolStripMenuItem 个人中心ToolStripMenuItem;
         private ToolStripMenuItem 修改密码ToolStripMenuItem;
         private ToolStripMenuItem 退出登录ToolStripMenuItem;

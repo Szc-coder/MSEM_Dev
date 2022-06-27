@@ -5,6 +5,7 @@ namespace MSEM_Dev
 {
     class MsemApplication
     {
+        [STAThread]
         public static void Main()
         {
             Login login = new Login();

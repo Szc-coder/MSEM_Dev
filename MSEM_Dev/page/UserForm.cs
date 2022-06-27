@@ -179,7 +179,7 @@ namespace MSEM_Dev.page
                     return;
                 }*/
 
-                dataGirdToExcel.ToExcel("C:\\Users\\qqab1\\Desktop\\用户信息.xls", UserDataGridView);
+                // dataGirdToExcel.ToExcel("C:\\Users\\qqab1\\Desktop\\用户信息.xls", UserDataGridView);
                 MessageBox.Show("导出成功！");
             }
             catch(Exception ex)

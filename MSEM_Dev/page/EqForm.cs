@@ -3,7 +3,6 @@ using System.Data;
 using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
 using System.Data.SqlClient;
 using System.Linq;
-using Microsoft.Office.Interop.Excel;
 using MSEM_Dev.goble;
 using MSEM_Dev.Uitls;
 using MSEM_Dev.page.EqFormChildred;
@@ -195,6 +194,22 @@ namespace MSEM_Dev.page
             eqReairForm.EqName = EqName;
             eqReairForm.EqID = EqId;
             eqReairForm.ShowDialog();
+        }
+
+        private void ToExcel_Click(object sender, EventArgs e)
+        {
+            dataGirdToExcel.ExportToExcel(EqDataGridView, "设备汇总");
+        }
+
+        private void EqDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 0)
+            {
+                string Eqid = EqDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString();
+                ShowImage show = new ShowImage();
+                show.EqName = Eqid;
+                show.ShowDialog();
+            }
         }
     }
 }
